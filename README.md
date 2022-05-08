@@ -3,10 +3,10 @@
 First, we need to change the `package.json` file.
 
 ```bash
-	"build": "next build && next export"
+"build": "next build && next export"
 ```
 
-and run the following comand
+and run the following command
 
 ```bash
 npm run build
@@ -27,7 +27,7 @@ server -s out -p 8000
 
 here -p 8000 indicates at which port we need to run the site
 
-For more info we can check the [documentation] (https://nextjs.org/docs/advanced-features/static-html-export)
+For more info we can check the ['documentation'](https://nextjs.org/docs/advanced-features/static-html-export).
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
