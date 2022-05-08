@@ -53,7 +53,7 @@ export const getStaticPaths = async () => {
 
 	return {
 		paths,
-		fallback: true, // this means that is we going to path which does not exist in the data then it will show us a 404 page
+		fallback: false, // this means that is we going to path which does not exist in the data then it will show us a 404 page
 	};
 };
 

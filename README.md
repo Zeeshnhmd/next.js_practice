@@ -1,3 +1,34 @@
+## Export a Static Website
+
+First, we need to change the `package.json` file.
+
+```bash
+	"build": "next build && next export"
+```
+
+and run the following comand
+
+```bash
+npm run build
+```
+
+This will build an `out` folder in the root directory
+now we need to install the serve package globally
+
+```bash
+npm i -g serve
+```
+
+Now, in order to see the Static website locally we need to run the following command
+
+```bash
+server -s out -p 8000
+```
+
+here -p 8000 indicates at which port we need to run the site
+
+For more info we can check the [documentation] (https://nextjs.org/docs/advanced-features/static-html-export)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
