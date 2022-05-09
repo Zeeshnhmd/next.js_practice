@@ -1,3 +1,4 @@
+import { server } from '../../../config';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -29,10 +30,38 @@ const Article = ({ articles }) => {
 
 // this is how we can fetch data using [getStaticProps ()] and [getStaticPaths ()]
 
+// export const getStaticProps = async (context) => {
+// 	const res = await fetch(
+// 		`https://jsonplaceholder.typicode.com/posts/${context.params.id}`
+// 	);
+// 	const articles = await res.json();
+// 	return {
+// 		props: {
+// 			articles,
+// 		},
+// 	};
+// };
+
+// export const getStaticPaths = async () => {
+// 	const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+// 	const articles = await res.json();
+
+// getting ids
+// 	const ids = articles.map((article) => article.id);
+
+// getting paths
+// 	const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+
+// 	return {
+// 		paths,
+// 		fallback: false, // this means that is we going to path which does not exist in the data then it will show us a 404 page
+// 	};
+// };
+
+// fetching data from local api
+
 export const getStaticProps = async (context) => {
-	const res = await fetch(
-		`https://jsonplaceholder.typicode.com/posts/${context.params.id}`
-	);
+	const res = await fetch(`${server}/api/articles/${context.params.id}`);
 	const articles = await res.json();
 	return {
 		props: {
@@ -42,7 +71,7 @@ export const getStaticProps = async (context) => {
 };
 
 export const getStaticPaths = async () => {
-	const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+	const res = await fetch(`${server}/api/articles/`);
 	const articles = await res.json();
 
 	// getting ids
