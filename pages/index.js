@@ -9,7 +9,10 @@ export default function Home({ articles }) {
 	);
 }
 
-// fetching data from local api
+/**
+ * *  fetching data from local api
+ */
+
 export const getStaticProps = async () => {
 	const res = await fetch(`${server}/api/articles`);
 	const articles = await res.json();
@@ -21,7 +24,9 @@ export const getStaticProps = async () => {
 	};
 };
 
-// fetching data from api link
+/**
+ * * fetching data from api link
+ */
 
 // export const getStaticProps = async () => {
 // 	const res = await fetch(

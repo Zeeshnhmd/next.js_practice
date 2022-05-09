@@ -14,7 +14,9 @@ const Article = ({ articles }) => {
 	);
 };
 
-// this is how we can fetch data using getServerSideProps.
+/***
+ * * this is how we can fetch data using getServerSideProps.
+ */
 
 // export const getServerSideProps = async (context) => {
 // 	const res = await fetch(
@@ -28,7 +30,9 @@ const Article = ({ articles }) => {
 // 	};
 // };
 
-// this is how we can fetch data using [getStaticProps ()] and [getStaticPaths ()]
+/***
+ * * this is how we can fetch data using [getStaticProps ()] and [getStaticPaths ()]
+ */
 
 // export const getStaticProps = async (context) => {
 // 	const res = await fetch(
@@ -58,7 +62,9 @@ const Article = ({ articles }) => {
 // 	};
 // };
 
-// fetching data from local api
+/***
+ * * fetching data from local api
+ */
 
 export const getStaticProps = async (context) => {
 	const res = await fetch(`${server}/api/articles/${context.params.id}`);
